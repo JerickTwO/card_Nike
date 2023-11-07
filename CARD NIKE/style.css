@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/*===== VARIABLES CSS =====*/
+/* Variables CSS */
 :root {
     --dark-color-lighten: #eaeaea;
     --red-card: rgba(212, 209, 209, 0.995);
@@ -9,7 +9,7 @@
     --text: #1f4a1f;
 }
 
-/*===== RESET =====*/
+/* Reset y estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -22,16 +22,19 @@ body {
     width: 100vw;
     background-color: var(--dark-color-lighten);
 }
-h1{
+
+h1 {
     text-align: center;
     font-size: 90px;
     margin: 40px;
 }
+
 img {
     max-width: 100%;
-    height: 184px;
+    height: auto;
 }
-button{
+
+button {
     display: inline-block;
     border: none;
     outline: none;
@@ -40,92 +43,89 @@ button{
     cursor: pointer;
 }
 
-/*===== CARD =====*/
+/* Estilos de la tarjeta */
 .container {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     gap: 25px;
     padding-bottom: 100px;
-    
+}
 
-    .card {
-        background-color: var(--red-card);
-        width: 340px;
-        height: auto;
-        padding: 1rem;
-        box-shadow: -1px 15px 30px -12px rgb(0, 0, 0);
-        border-radius: 0.9rem;
-        color: var(--text);
-        cursor: pointer;
+.card {
+    background-color: var(--red-card);
+    width: 340px;
+    padding: 1rem;
+    box-shadow: -1px 15px 30px -12px rgb(0, 0, 0);
+    border-radius: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
 
-        
+    .product-image {
+        transform: translate(0, -1.5rem);
+        transition: 0.5s ease-in-out;
+        filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+    }
 
-        .product_image {
-
-            transform: translate(0, -1.5rem ) ;
-            transition: 0.5s ease-in-out;
-            filter: drop-shadow(5px 10px 15px rgba(8, 9, 13,0.4));
-        }
-
-        &:hover {
-            .product_image {
-                transform: translate(-.1rem, -4rem) rotate(-20deg) ;
-            }
-        }
-        .product-info{
-            text-align: center;
-            & h2{
-                font-size: 1.4rem;
-                font-weight: 600;
-            }
-            & p {
-                margin: 0.4rem;
-                font-size: 0.8rem;
-                font-weight: 600;
-                
-              }
-              .price {
-                font-size: 1.2rem;
-                font-weight: 500;
-              }
-
-        }
-        .btn{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            margin-top: 0.8rem;
-         
-              .buy-btn{
-                background-color: var(--btn);
-                padding: 0.6rem 3.5rem;
-                font-weight: 600;
-                font-size: 1rem;
-                color: #fff;
-                transition: 0.3s;
-                
-                &:hover {
-                    background-color: var(--btn-hover);
-                  }
-              }
-              .fav{
-               
-                background: #fff;
-                padding: 0.5rem 0.5rem;
-                border: 1px solid#000;
-                display: grid;
-                place-items: center;
-                font-size: 30px;
-              }
+    &:hover {
+        .product-image {
+            transform: translate(-.1rem, -4rem) rotate(-20deg);
         }
     }
 
-}
-/*INICIO*/
+    .product-info {
+        text-align: center;
 
-header{
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 0.8rem;
+
+        .buy-btn {
+            background-color: var(--btn);
+            padding: 0.6rem 3.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--btn-hover);
+            }
+        }
+
+        .fav {
+            background: #fff;
+            padding: 0.5rem 0.5rem;
+            border: 1px solid #000;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+        }
+    }
+}
+
+/* Estilos del encabezado */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,53 +134,61 @@ header{
     margin-bottom: 10px;
 }
 
-a{  
+a {
     font-size: 20px;
     text-decoration: none;
     color: #fff;
 }
-nav{
+
+nav {
     margin: 15px;
 }
-nav a{
+
+nav a {
     padding-right: 10px;
-    
 }
-nav a:hover{
+
+nav a:hover {
     color: rgb(228, 211, 24);
 }
 
-header img{
-    margin:5px;
-    display: flex; 
+header img {
+    margin: 5px;
+    display: flex;
     height: 80px;
 }
-/*FIN*/
-@media (max-width:1000px){
+
+/* Estilos responsivos */
+@media (max-width: 1000px) {
     .container {
         height: auto;
         align-items: center;
         flex-direction: column;
-        
     }
-    .card{
+
+    .card {
         margin: 50px 0;
     }
-    .fav{
+
+    .fav {
         display: none;
-    }   
-    h1{
+    }
+
+    h1 {
         font-size: 80px;
     }
 }
-@media only screen and (max-width:650px) {
-    header{
-        flex-direction:column;
+
+@media only screen and (max-width: 650px) {
+    header {
+        flex-direction: column;
     }
-    nav{
+
+    nav {
         padding: 10px 0px;
     }
-    h1{
+
+    h1 {
         font-size: 65px;
     }
 }
